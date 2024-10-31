@@ -16,24 +16,81 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body class="body">
-    <header class="mt-20">
-        <div class="row header_box ">
-            <div class="col-3 d-flex justify-content-center align-items-center">
-                <button type="button" class="btn btn-primary" id="addButton"> ADD TASK</button>
-            </div>
-            <div class="col-6">
-                <div class=" input-group btn d-flex justify-content-center">
-                    <input type="search">
-                    <button class="btn btn-primary">SEARCH</button>
+<body class="d-flex flex-column align-items-center">
+    <div class="container">
+        <header class="mt-4">
+            <div class="row header_box">
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary" id="addButton">ADD TASK</button>
+                </div>
+                <div class="col-6">
+                    <div class="input-group d-flex justify-content-center">
+                        <input type="search" class="form-control" placeholder="Search tasks" aria-label="Search tasks">
+                        <button class="btn btn-primary">SEARCH</button>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary" id="addmanyButton">ADD MULTIPLE TASK</button>
                 </div>
             </div>
-            <div class="col-3 d-flex justify-content-center align-items-center">
-                <button type="button" class="btn btn-primary" id="addmanyButton"> ADD MANY TASK</button>
+        </header>
+
+        <section class="row mt-4"> <!-- todo -->
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card text-bg-primary mb-3">
+                        <div class="card-header">TODO</div>
+                        <div class="card-body">
+                            <div class="col-md-4 w-100"> <!-- task for testing -->
+                                <div class="card text-bg-primary mb-3">
+                                    <div class="card-header">TEST TASK</div>
+                                    <div class="card-body">
+                                        <p>HELLO this just a test if it will work correctly without any prob</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-primary" id="addmanyButton">EDIT</button>
+                                        <button type="button" class="btn btn-primary" id="addmanyButton">DELETE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"> <!-- inprogress-->
+                    <div class="card text-bg-primary mb-3">
+                        <div class="card-header">IN PROGRESS</div>
+                        <div class="card-body">
+                            <div class="col-md-4 w-100"> <!-- task for testing -->
+                                <div class="card text-bg-primary mb-3">
+                                    <div class="card-header">TEST TASK</div>
+                                    <div class="card-body">
+                                        <p>HELLO this just a test if it will work correctly without any prob</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4"> <!-- DONE -->
+                    <div class="card text-bg-primary mb-3">
+                        <div class="card-header">DONE</div>
+                        <div class="card-body">
+
+                            <div class="col-md-4 w-100"> <!-- task for testing -->
+                                <div class="card text-bg-primary mb-3">
+                                    <div class="card-header">TEST TASK</div>
+                                    <div class="card-body">
+                                        <p>HELLO this just a test if it will work correctly without any prob</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row task_box"></div>
-    </header>
+        </section>
+    </div>
 </body>
 
 </html>
