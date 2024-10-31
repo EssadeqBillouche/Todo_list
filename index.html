@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO LIST</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -15,8 +16,24 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
-
+<body class="body">
+    <header class="mt-20">
+        <div class="row header_box ">
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary" id="addButton"> ADD TASK</button>
+            </div>
+            <div class="col-6">
+                <div class=" input-group btn d-flex justify-content-center">
+                    <input type="search">
+                    <button class="btn btn-primary">SEARCH</button>
+                </div>
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary" id="addmanyButton"> ADD MANY TASK</button>
+            </div>
+        </div>
+        <div class="row task_box"></div>
+    </header>
 </body>
 
 </html>
