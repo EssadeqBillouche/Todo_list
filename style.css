@@ -6,6 +6,8 @@ body {
     display: none;
     z-index: 999;
     position: absolute;
-    height: 100%;
-    width: 90% !important;
+    width: 80%!important;
+}
+#task_form{
+    height: 300px !important;
 }

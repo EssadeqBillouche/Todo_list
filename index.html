@@ -21,7 +21,7 @@
         <header class="mt-4">
             <div class="row header_box">
                 <div class="col-3 d-flex justify-content-center align-items-center">
-                    <button type="button" class="btn btn-primary" id="add_button">ADD TASK</button>
+                    <button type="button" class="btn btn-primary" id="add_button_header">ADD TASK</button>
                 </div>
                 <div class="col-6">
                     <div class="input-group d-flex justify-content-center">
@@ -35,16 +35,30 @@
             </div>
         </header>
 
-        <section>
-            <div class="col-md-4 w-100 " style="display: none; " id="task_form"> <!-- hidden form shows onclick-->
+        <section> <!-- hidden form shows onclick-->
+            <div class="col-md-4 w-90 h-50 p-3" style="display: none; " id="task_form">
                 <div class="card text-bg-primary mb-3">
                     <div class="card-header">ADD TASK</div>
                     <form m-20>
                         <div class="form-group row m-0 w-70 p-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label ">TASK NAME</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="TASK NAME">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="TASK NAME">
                             </div>
+                        </div>
+                        <div class="row m-0 w-70 p-3">
+                            <div class="col">
+                                <label class="col-sm-2 col-form-label ">DATE START</label>
+                                <input type="date" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <label class="col-sm-2 col-form-label ">DATE END</label>
+                                <input type="date" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group m-0 w-70 p-3">
+                            <label for="exampleFormControlTextarea1">DESCRIPTION</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
 
                         <fieldset class="form-group m-0 w-70 p-3">
@@ -55,45 +69,59 @@
                                         <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
                                             value="P1" checked>
                                         <label class="form-check-label" for="gridRadios1">
-                                            First radio
+                                            <span class="badge bg-danger">P1 - High Priority</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
                                             value="option2">
                                         <label class="form-check-label" for="gridRadios2">
-                                            Second radio
+                                            <span class="badge bg-warning text-dark">P2 - Medium Priority</span>
                                         </label>
                                     </div>
-                                    <div class="form-check disabled">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
-                                            value="option3" disabled>
-                                        <label class="form-check-label" for="gridRadios3">
-                                            Third disabled radio
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                            value="option2">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            <span class="badge bg-success">P3 - Low Priority</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
-                        <div class="form-group row m-0 w-70 p-3">
-                            <div class="col-sm-2">Checkbox</div>
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                    <label class="form-check-label" for="gridCheck1">
-                                        Example checkbox
-                                    </label>
+                        <fieldset class="form-group m-0 w-70 p-3">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">STATUT</legend>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio" id="gridRadios1"
+                                            value="P1" checked>
+                                        <label class="form-check-label" for="gridRadios1">
+                                            <span class="badge bg-danger">TODO</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio" id="gridRadios2"
+                                            value="option2">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            <span class="badge bg-warning text-dark">DOING</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio" id="gridRadios2"
+                                            value="option2">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            <span class="badge bg-success">DONE</span>
+                                        </label>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
+                        </fieldset>
                         <div class="form-group row m-0 w-70 p-3">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary"> ADD TASK</button>
+                                <button type="submit" class="btn btn-primary" id="add_task_form"> ADD TASK</button>
                             </div>
-                        </div>
-                        <div class="form-group m-0 w-70 p-3">
-                            <label for="exampleFormControlTextarea1">DESCRIPTION</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                     </form>
                 </div>
@@ -105,8 +133,9 @@
                 <div class="col-md-4">
                     <div class="card text-bg-primary mb-3">
                         <div class="card-header">TODO</div>
-                        <div class="card-body todo_card_body">
-                            <div class="col-md-4 w-100 " style="display: none;">
+                        <div class="card-body " id="todo_card_body">
+
+                            <!-- <div class="col-md-4 w-100 " style="display: none;">
                                 <div class="card text-bg-primary mb-3">
                                     <div class="card-header">TEST TASK</div>
                                     <div class="card-body">
@@ -117,15 +146,17 @@
                                         <button type="button" class="btn btn-primary" id="addmanyButton">DELETE</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4"> <!-- inprogress-->
                     <div class="card text-bg-primary mb-3">
                         <div class="card-header">IN PROGRESS</div>
-                        <div class="card-body">
-                            <div class="col-md-4 w-100"> <!-- task for testing -->
+                        <div class="card-body " id="inprogress_card_body">
+
+                            <!-- <div class="col-md-4 w-100"> 
                                 <div class="card text-bg-primary mb-3">
                                     <div class="card-header">TEST TASK</div>
                                     <div class="card-body">
@@ -136,7 +167,8 @@
                                         <button type="button" class="btn btn-primary" id="addmanyButton">DELETE</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+
                         </div>
                     </div>
                 </div>
@@ -146,7 +178,7 @@
                         <div class="card-header">DONE</div>
                         <div class="card-body">
 
-                            <div class="col-md-4 w-100"> <!-- task for testing -->
+                            <!-- <div class="col-md-4 w-100"> 
                                 <div class="card text-bg-primary mb-3">
                                     <div class="card-header">TEST TASK</div>
                                     <div class="card-body">
@@ -157,7 +189,8 @@
                                         <button type="button" class="btn btn-primary" id="addmanyButton">DELETE</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+                            
                         </div>
                     </div>
                 </div>
