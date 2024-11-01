@@ -1,0 +1,11 @@
+body {
+    background-color: #343a40 !important;
+}
+
+#task_form {
+    display: none;
+    z-index: 999;
+    position: absolute;
+    height: 100%;
+    width: 90% !important;
+}
