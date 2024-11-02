@@ -4,10 +4,9 @@ const add_task_form = document.getElementById("add_task_form");
 let todo_card = document.getElementById("todo_card_body");
 const task_name = document.getElementById("task_name");
 const task_start = document.getElementById("task_start");
-const task_end = document.getElementById("task_end");
 const task_description = document.getElementById("task_description");
 
-let id_task = 0;
+let task_id = 0;
 
 const taskk_name = task_name.value;
 
@@ -18,6 +17,9 @@ add_button_header.onclick = function () { // function to show the pop-up form
 
 add_task_form.addEventListener("click", (e) => {
     e.preventDefault()
+    task_id++;
+    console.log(task_start.value);
+
     const prioritys = document.querySelectorAll('input[name="gridRadios"]:checked');
     const priority = prioritys[0].value;
     console.log(priority);
@@ -40,22 +42,27 @@ add_task_form.addEventListener("click", (e) => {
                 <span class="badge bg-success">${priority}</span>
             </div>
         </div>
-    </div>`} else if (task_statut === 'DOING')
-        {
+    </div>`} else if (task_statut === 'DOING') {
         todo_card = document.getElementById("inprogress_card_body");
         todo_card.innerHTML += `<div class="col-md-4 w-100"> 
-        <div class="card text-bg-primary mb-3">
-            <div class="card-header">${task_name.value}</div>
-            <div class="card-body">
-                <p>${task_description.value}</p>
-            </div>
-            <div class="card-footer">
-                <span class="badge bg-success">${priority}</span>
-                <span class="badge bg-success">${priority}</span>
-            </div>
-        </div>
-    </div>`
-    } else{
+                                <div class=" card text-bg-primary mb-3">
+                                    <div class="card-header">TEST TASK 
+                                      <div> <span class="badge rounded-pill bg-info text-dark">DATE</span> <span class="badge bg-dark">priority</span></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>description</p>
+                                    </div>
+                                    <div class=" col card-footer">
+                                        <div>
+                                        <button type="button" class="btn btn-success" id="addmanyButton">EDIT</button>
+                                        <button type="button" class="btn btn-danger" id="addmanyButton">DELETE</button>
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+      </div> `
+    } else {
         todo_card = document.getElementById("DONE_card_body");
         todo_card.innerHTML += `<div class="col-md-4 w-100"> 
         <div class="card text-bg-primary mb-3">
@@ -70,6 +77,6 @@ add_task_form.addEventListener("click", (e) => {
         </div>
     </div>`
     }
-    hidden_form.style.display = 'none';
 
+    hidden_form.style.display = 'none';
 })
