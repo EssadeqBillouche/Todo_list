@@ -15,11 +15,21 @@ add_button_header.onclick = function () { // function to show the pop-up form
 }
 function add_task_function(html_card_id, priority) {
     todo_card = document.getElementById(html_card_id);
+    const p1 = '<span class="badge bg-danger"> P1 </span>';
+    const p2 = '<span class="badge bg-warning text-dark"> P2 </span>';
+    const p3 = '<span class="badge bg-success"> P3 </span>';
+    if (priority == 'P1') {
+        test = p1;
+    } else if(priority == 'P2'){
+        test = p2;
+    }else{
+        test = p3;
+    }
     todo_card.innerHTML += `
         <div class="col-md-4 w-100"> 
                             <div class=" card text-bg-primary mb-3">
                                 <div class="card-header">${task_name.value} 
-                                    <div> <span class="badge rounded-pill bg-info text-dark">${task_end.value}</span> <span class="badge bg-dark">${priority}</span> </div>
+                                    <div> <span class="badge rounded-pill bg-info text-dark">${task_end.value}</span> ${test} </div>
                                 </div>
                                 <div class="card-body">
                                     <p>${task_description.value}</p>
