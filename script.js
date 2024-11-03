@@ -95,8 +95,8 @@ function add_task_function(html_card_id, priority) {
                 </div>
                 <div class="col card-footer">
                     <div>
-                        <button type="button" class="btn btn-success" onclick="edit_task(${task_array[index].id})">EDIT</button>
-                        <button type="button" class="btn btn-danger" onclick="delete_task(${task_array[index].id})">DELETE</button>
+                        <button type="button" class="btn btn-success btn-sm" onclick="edit_task(${task_array[index].id})">EDIT</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="delete_task(${task_array[index].id})">DELETE</button>
                     </div>
                 </div>
             </div>
