@@ -16,178 +16,134 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body class="d-flex flex-column align-items-center">
-    <div class="container">
-        <header class="mt-4">
-            <div class="row header_box">
-                <div class="col-3 d-flex justify-content-center align-items-center">
-                    <button type="button" class="btn btn-primary" id="add_button_header">ADD TASK</button>
+<body class="d-flex flex-column align-items-center bg-light">
+    <div class="container py-4">
+        <header class="mb-5">
+            <div class="row header_box g-3">
+                <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary w-100" id="add_button_header">ADD TASK</button>
                 </div>
-                <div class="col-6">
-                    <div class="input-group d-flex justify-content-center">
+                <div class="col-md-9 col-sm-12">
+                    <div class="input-group">
                         <input type="search" class="form-control" placeholder="Search tasks" aria-label="Search tasks">
                         <button class="btn btn-primary">SEARCH</button>
                     </div>
                 </div>
-                <div class="col-3 d-flex justify-content-center align-items-center">
-                    <button type="button" class="btn btn-primary" id="addmanyButton">ADD MULTIPLE TASK</button>
-                </div>
             </div>
         </header>
-
-        <section> <!-- hidden form shows onclick-->
-            <div class="col-md-4 w-90 h-50 p-3" style="display: none; " id="task_form">
-                <div class="card text-bg-primary mb-3">
-                    <div class="card-header">ADD TASK</div>
-                    <form m-20>
-                        <div class="form-group row m-0 w-70 p-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label ">TASK NAME</label>
-                            <div class="col-sm-10">
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered shadow-sm m-0" id="task-count-table">
+                        <tr class="table-primary text-center">
+                            <td class="px-3 py-2">TODO: 0</td>
+                            <td class="px-3 py-2">IN PROGRESS: 0</td>
+                            <td class="px-3 py-2">DONE: 0</td>
+                            <td class="px-3 py-2">TOTAL: 0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <section class="mb-5">
+            <div class="col-lg-6 col-md-8 col-sm-12 mx-auto" style="display: none;" id="task_form">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">ADD TASK</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-4">
+                                <label class="form-label">TASK NAME</label>
                                 <input type="text" class="form-control" id="task_name" placeholder="TASK NAME" required>
                             </div>
-                        </div>
-                        <div class="row m-0 w-70 p-3">
-                            <div class="col">
-                                <label class="col-sm-2 col-form-label ">DATE START</label>
-                                <input type="date" class="form-control" id="task_end" placeholder="First name" required>
+                            <div class="mb-4">
+                                <label class="form-label">DATE START</label>
+                                <input type="date" class="form-control" id="task_end" required>
                             </div>
-                        </div>
-                        <div class="form-group m-0 w-70 p-3">
-                            <label for="exampleFormControlTextarea1">DESCRIPTION</label>
-                            <textarea class="form-control" id="task_description" rows="3" required></textarea>
-                        </div>
-
-                        <fieldset class="form-group m-0 w-70 p-3">
-                            <div class="row">
-                                <legend class="col-form-label col-sm-2 pt-0">PRIORITY</legend>
-                                <div class="col-sm-10" required>
-                                    <div class="form-check" id="priority">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
-                                            value="P1">
-                                        <label class="form-check-label" for="gridRadios1">
+                            <div class="mb-4">
+                                <label class="form-label">DESCRIPTION</label>
+                                <textarea class="form-control" id="task_description" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">PRIORITY</label>
+                                <div class="ms-3">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="gridRadios" value="P1">
+                                        <label class="form-check-label">
                                             <span class="badge bg-danger">P1</span>
                                         </label>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                                            value="P2">
-                                        <label class="form-check-label" for="gridRadios2">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="gridRadios" value="P2">
+                                        <label class="form-check-label">
                                             <span class="badge bg-warning text-dark">P2</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                                            value="P3">
-                                        <label class="form-check-label" for="gridRadios2">
+                                        <input class="form-check-input" type="radio" name="gridRadios" value="P3">
+                                        <label class="form-check-label">
                                             <span class="badge bg-success">P3</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                        </fieldset>
-                        <fieldset class="form-group m-0 w-70 p-3">
-                            <div class="row">
-                                <legend class="col-form-label col-sm-2 pt-0">STATUT</legend>
-                                <div class="col-sm-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio"
-                                            id="gridRadios1" value="TODO">
-                                        <label class="form-check-label" for="gridRadios1">
+                            <div class="mb-4">
+                                <label class="form-label">STATUS</label>
+                                <div class="ms-3">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio" value="TODO">
+                                        <label class="form-check-label">
                                             <span class="badge bg-danger">TODO</span>
                                         </label>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio"
-                                            id="gridRadios2" value="DOING">
-                                        <label class="form-check-label" for="gridRadios2">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio" value="DOING">
+                                        <label class="form-check-label">
                                             <span class="badge bg-warning text-dark">DOING</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio"
-                                            id="gridRadios2" value="DONE">
-                                        <label class="form-check-label" for="gridRadios2">
+                                        <input class="form-check-input" type="radio" name="TASK_STATU_Redio" value="DONE">
+                                        <label class="form-check-label">
                                             <span class="badge bg-success">DONE</span>
                                         </label>
                                     </div>
-
                                 </div>
                             </div>
-                        </fieldset>
-                        <div class="form-group row m-0 w-70 p-3">
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary" id="add_task_form"> ADD TASK</button>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary" id="add_task_form">ADD TASK</button>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section class="row mt-4"> <!-- todo -->
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <div class="card text-bg-primary mb-3">
-                        <div class="card-header">TODO</div>
-                        <div class="card-body " id="todo_card_body">
-
-                            <!-- <div class="col-md-4 w-100 " style="display: none;">
-                                <div class="card text-bg-primary mb-3">
-                                    <div class="card-header">TEST TASK</div>
-                                    <div class="card-body">
-                                        <p>HELLO this just a test if it will work correctly without any prob</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button type="button" class="btn btn-primary" id="addmanyButton">EDIT</button>
-                                        <button type="button" class="btn btn-primary" id="addmanyButton">DELETE</button>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                        </div>
+        <section class="row g-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card shadow h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">TODO</h5>
+                    </div>
+                    <div class="card-body" id="todo_card_body">
                     </div>
                 </div>
-                <div class="col-md-4"> <!-- inprogress-->
-                    <div class="card text-bg-primary mb-3">
-                        <div class="card-header">IN PROGRESS</div>
-                        <div class="card-body " id="inprogress_card_body">
-
-                            <!-- <div class="col-md-4 w-100"> 
-                                <div class="card text-bg-primary mb-3">
-                                    <div class="card-header">TEST TASK</div>
-                                    <div class="card-body">
-                                        <p>HELLO this just a test if it will work correctly without any prob</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button type="button" class="btn btn-secondary" id="addmanyButton">EDIT</button>
-                                        <button type="button" class="btn btn-primary" id="addmanyButton">DELETE</button>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card shadow h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">IN PROGRESS</h5>
+                    </div>
+                    <div class="card-body" id="inprogress_card_body">
                     </div>
                 </div>
-
-                <div class="col-md-4"> <!-- DONE -->
-                    <div class="card text-bg-primary mb-3">
-                        <div class="card-header">DONE</div>
-                        <div class="card-body" id="DONE_card_body">
-
-                            <!-- <div class="col-md-4 w-100"> 
-                                <div class="card text-bg-primary mb-3">
-                                    <div class="card-header">TEST TASK</div>
-                                    <div class="card-body">
-                                        <p>HELLO this just a test if it will work correctly without any prob</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button type="button" class="btn btn-primary" id="addmanyButton">EDIT</button>
-                                        <button type="button" class="btn btn-primary" id="addmanyButton">DELETE</button>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card shadow h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">DONE</h5>
+                    </div>
+                    <div class="card-body" id="DONE_card_body">
                     </div>
                 </div>
             </div>
