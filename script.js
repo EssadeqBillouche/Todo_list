@@ -5,9 +5,24 @@ let todo_card = document.getElementById("todo_card_body");
 const task_name = document.getElementById("task_name");
 const task_end = document.getElementById("task_end");
 const task_description = document.getElementById("task_description");
+const todo_static = document.getElementById("todo_static");
+const doing_static = document.getElementById("doing_static");
+const done_static = document.getElementById("done_static");
+const total_static = document.getElementById("tota_static");
 
 var index = 0;
 let task_array = [];
+
+function tasks_static() {
+    const todoTasks = task_array.filter(task => task.statut === 'TODO').length;
+    const doingTasks = task_array.filter(task => task.statut === 'DOING').length;
+    const doneTasks = task_array.filter(task => task.statut === 'DONE').length;
+    const totalTasks = task_array.length;
+    todo_static.innerHTML = ` TODO: ${todoTasks} `;
+    doing_static.innerHTML = ` DOING: ${doingTasks} `;
+    done_static.innerHTML = ` DONE: ${doneTasks} `;
+    total_static.innerHTML = ` TOTAL: ${totalTasks}`;
+}
 
 add_button_header.onclick = function() {
     hidden_form.style.display = 'block';
@@ -20,6 +35,7 @@ function delete_task(taskId) {
 
     task_array = task_array.filter(task => task.id !== taskId);
     index--;
+    tasks_static()
 }
 
 
@@ -35,6 +51,7 @@ function edit_task(taskId) {
     delete_task(taskId);
 
     hidden_form.style.display = 'block';
+    tasks_static()
 }
 
 add_task_form.addEventListener("click", (e) => {
@@ -64,6 +81,7 @@ add_task_form.addEventListener("click", (e) => {
     }
     
     hidden_form.style.display = 'none';
+    tasks_static(); 
 })
 
 function add_task_function(html_card_id, priority) {
@@ -104,3 +122,4 @@ function add_task_function(html_card_id, priority) {
     `;
     index++;
 }
+tasks_static(); 
