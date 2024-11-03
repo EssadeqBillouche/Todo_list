@@ -48,14 +48,14 @@ function add_notification (){
     }, 4000);
 }
 
-// function delete_notification (){
-//     const delet_alert = document.getElementById("delete_id_alert");
-//     delet_alert.style.display = 'block';
+function delete_notification (){
+    const delet_alert = document.getElementById("delete_id_alert");
+    delet_alert.style.display = 'block';
 
-//     setTimeout(() => {
-//         delete_alert.style.display = 'none';
-//     }, 4000);
-// }
+    setTimeout(() => {
+        delete_alert.style.display = 'none';
+    }, 4000);
+}
 
 // function edit_notification (){
 //     const edit_alert = document.getElementById("edit_id_alert");
