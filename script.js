@@ -10,6 +10,8 @@ const doing_static = document.getElementById("doing_static");
 const done_static = document.getElementById("done_static");
 const total_static = document.getElementById("tota_static");
 
+
+
 var index = 0;
 let task_array = [];
 
@@ -35,9 +37,34 @@ function delete_task(taskId) {
 
     task_array = task_array.filter(task => task.id !== taskId);
     index--;
-    tasks_static()
+    tasks_static();
+}
+function add_notification (){
+    const add_alert = document.getElementById("add_id_alert");
+    add_alert.style.display = 'block';
+
+    setTimeout(() => {
+        add_alert.style.display = 'none';
+    }, 4000);
 }
 
+// function delete_notification (){
+//     const delet_alert = document.getElementById("delete_id_alert");
+//     delet_alert.style.display = 'block';
+
+//     setTimeout(() => {
+//         delete_alert.style.display = 'none';
+//     }, 4000);
+// }
+
+// function edit_notification (){
+//     const edit_alert = document.getElementById("edit_id_alert");
+//     edit_alert.style.display = 'block';
+
+//     setTimeout(() => {
+//         edit_alert.style.display = 'none';
+//     }, 4000);
+// }
 
 function edit_task(taskId) {
 
@@ -51,6 +78,7 @@ function edit_task(taskId) {
     delete_task(taskId);
 
     hidden_form.style.display = 'block';
+    
     tasks_static()
 }
 
@@ -82,6 +110,7 @@ add_task_form.addEventListener("click", (e) => {
     
     hidden_form.style.display = 'none';
     tasks_static(); 
+    add_notification ()
 })
 
 function add_task_function(html_card_id, priority) {
