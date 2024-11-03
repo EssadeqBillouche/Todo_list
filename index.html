@@ -36,10 +36,10 @@
                 <div class="table-responsive">
                     <table class="table table-bordered shadow-sm m-0" id="task-count-table">
                         <tr class="table-primary text-center">
-                            <td class="px-3 py-2">TODO: 0</td>
-                            <td class="px-3 py-2">IN PROGRESS: 0</td>
-                            <td class="px-3 py-2">DONE: 0</td>
-                            <td class="px-3 py-2">TOTAL: 0</td>
+                            <td class="px-3 py-2 " id="todo_static" > </td>
+                            <td class="px-3 py-2" id="doing_static" > </td>
+                            <td class="px-3 py-2" id="done_static"> </td>
+                            <td class="px-3 py-2" id="tota_static"> </td>
                         </tr>
                     </table>
                 </div>
@@ -122,7 +122,7 @@
         <section class="row g-4">
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card shadow h-100">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-danger text-white">
                         <h5 class="mb-0">TODO</h5>
                     </div>
                     <div class="card-body" id="todo_card_body">
@@ -131,7 +131,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card shadow h-100">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-warning text-white">
                         <h5 class="mb-0">IN PROGRESS</h5>
                     </div>
                     <div class="card-body" id="inprogress_card_body">
@@ -140,7 +140,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card shadow h-100">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-success text-white">
                         <h5 class="mb-0">DONE</h5>
                     </div>
                     <div class="card-body" id="DONE_card_body">
